@@ -1,0 +1,121 @@
+
+Problem 1: Partially Masking Customer Contacts 
+------------------------------------------------
+Scenario: Customer support representatives need to 
+verify order deliveries but should not see the customers' full, 
+sensitive email addresses or phone numbers.
+
+The Task: Create a secure view named v_customer_masked_directory 
+that displays customer_id, the customer's full name as a single 
+column (customer_name), a masked email (displaying only the first 
+3 characters, followed by ***@domain.com), and a masked phone number 
+(displaying only the last 4 digits, prefixed with ******).
+
+
+
+
+Problem 2: Dynamic Menu Pricing Tier View 
+-----------------------------------------
+Scenario: The kitchen needs a quick-reference dashboard that 
+automatically categorizes food items into different business segments
+based on their current pricing.
+
+The Task: Create a view named v_menu_segments that displays food_id,
+name, price, category, and a calculated column named pricing_tier.
+If the price is above 200, label it 'Premium'; 
+if between 100 and 200, label it 'Standard';
+otherwise, label it 'Budget'.
+
+
+Problem 3: Safe Income Calculator
+----------------------------------
+Scenario: Accounting needs to calculate the net income of employees.
+ However, many employees have NULL values in their commission (comm)
+  column, which breaks standard mathematical equations.
+
+The Task: Write a stored scalar function named fn_get_net_income
+that takes an employee's salary and commission as inputs, checks 
+if the commission is NULL (replacing it with 0), and returns the 
+combined net income.
+
+
+
+Problem 4: Department Safety Verification Transfer 
+---------------------------------------------------
+Scenario: HR requires a process to transfer employees to 
+new departments. If a user inputs a non-existent department number,
+the database should block the query to prevent invalid database state.
+
+The Task: Create a stored procedure named sp_safe_employee_transfer 
+that takes an empno and a target deptno. It must verify if the 
+department exists in the dept table. If it does, update the 
+employee record; if not, raise a database warning.
+
+
+
+
+Problem 5: Simple View Data Modification Rules 
+-------------------------------------------------
+Scenario: Developers want to update menu item availability from a 
+simple interface without letting editors touch raw tables.
+
+The Task: Create a simple view v_menu_availability on FoodItems. 
+Demonstrate that this view is updatable by modifying a value directly
+through the view, and explain the rules governing updatable views to
+your students.
+
+
+Problem 6: Name Formatting Utility
+------------------------------------
+Scenario: The marketing automation system needs customer names
+formatted uniformly as "Last Name, First Name" for printable 
+mailing vouchers.
+
+The Task: Write a stored function fn_format_customer_name that 
+accepts a customer_id and returns their formatted full name.
+
+
+Problem 7: Dynamic Parameter Aggregator
+-----------------------------------------
+Scenario: Management wants to query the total number of orders in 
+various states (e.g., 'Pending', 'Delivered') into system variables 
+to run background evaluations.
+
+The Task: Write a stored procedure sp_get_order_count_by_status
+that accepts a search status string as an input parameter, and 
+yields the aggregate count as an OUT parameter.
+
+
+
+Problem 8: Real-Time Department Payroll Directory 
+--------------------------------------------------
+Scenario: Finance needs a real-time monitor to see how much 
+department salary is being spent, alongside employee headcounts,
+ without writing complex joins.
+
+The Task: Create a view named v_dept_payroll_analytics displaying
+the department number, department name, total head count, and the
+sum of salaries.
+
+
+Problem 9: Order Eligibility Check
+------------------------------------
+Scenario: The ordering system needs to programmatically 
+check if a food item is available (availability = 1) before 
+letting a customer add it to their basket.
+
+The Task: Write a stored function fn_check_food_eligibility that 
+returns 1 if an item is available, and 0 if it is unavailable or 
+does not exist.
+
+
+Problem 10: Senior Salary Grade Directory View
+-----------------------------------------------
+Scenario: HR needs a directory of all senior personnel who fall
+into salary grades 4 or 5 according to the company’s structural 
+guidelines.
+
+The Task: Create a view v_senior_staff_directory joining emp, dept,
+and salgrade to display employee names, their current grades, 
+salaries, and department names.
+

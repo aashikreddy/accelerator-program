@@ -1,0 +1,13 @@
+# Ignore large HTML course exports
+PYTHON_PROGRAMMING/Scheduled Materials/*.html
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# VS Code
+.vscode/
+
+PYTHON_PROGRAMMING/Scheduled Materials/*.pdf
